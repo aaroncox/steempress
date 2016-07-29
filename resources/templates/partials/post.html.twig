@@ -1,0 +1,22 @@
+<article>
+  <h2>
+    <a href="/{{ post.metadata.tags[0] }}/@{{ post.author }}/{{ post.permlink }}">
+      {{ post.title }}
+    </a>
+  </h2>
+  <h6>
+
+    {{ "Written by" | trans }}
+     <a href='/@{{ post.author }}'>{{ post.author }}</a>
+    {{ "on %datetime%" | trans({'%datetime%' : post.ts | date("F jS")})}}.
+
+  </h6>
+  {% if preview %}
+  {{ post.html_preview | raw }}
+  {% else %}
+  {{ post.html | raw }}
+  {% endif %}
+  <a href="/{{ post.metadata.tags[0] }}/@{{ post.author }}/{{ post.permlink }}" class="button">
+    {{ 'Continue Reading' | trans }}
+  </a>
+</article>

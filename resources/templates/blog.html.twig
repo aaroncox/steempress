@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+  {% include 'partials/header.html.twig' with { username: username } %}
+
+  <div class="row">
+
+    <div class="large-9 columns" role="content">
+      {% for post in posts %}
+        {% include 'partials/post.html.twig' with { post: post, preview: true } %}
+        {% if not loop.last %}<hr>{% endif %}
+      {% endfor %}
+    </div>
+
+    <aside class="large-3 columns">
+      {% include 'partials/sidebar.html.twig' %}
+    </aside>
+
+  </div>
+
+{% endblock %}
