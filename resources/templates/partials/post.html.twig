@@ -11,7 +11,7 @@
     {{ "on %datetime%" | trans({'%datetime%' : post.ts | date("F jS")})}}.
 
   </h6>
-  {% if preview %}
+  {% if preview is defined %}
   {{ post.html_preview | raw }}
   {% else %}
   {{ post.html | raw }}
