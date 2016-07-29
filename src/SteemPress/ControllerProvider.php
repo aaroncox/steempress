@@ -51,6 +51,7 @@ class ControllerProvider implements ControllerProviderInterface
   public function post(App $app, $tag, $username, $permlink)
   {
     return $app['twig']->render('post.html.twig', array(
+      'username' => $username,
       'post' => $app['steemd']->getPost($username, $permlink)
     ));
   }
