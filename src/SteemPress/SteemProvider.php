@@ -2,7 +2,7 @@
 
 namespace SteemPress;
 
-use Silex\Application;
+use Silex\Application as SilexApplication;
 use Silex\ServiceProviderInterface;
 
 class SteemProvider implements ServiceProviderInterface
@@ -10,12 +10,12 @@ class SteemProvider implements ServiceProviderInterface
 
   protected $host;
 
-  public function boot(Application $app)
+  public function boot(SilexApplication $app)
   {
 
   }
 
-  public function register(Application $app)
+  public function register(SilexApplication $app)
   {
     $app["steemd.host"] = $this->host;
     $app["steemd"] = $app->share(new SteemService());

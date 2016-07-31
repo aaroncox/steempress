@@ -2,11 +2,11 @@
 
 namespace SteemPress;
 
-use Silex\Application;
+use Silex\Application as SilexApplication;
 
 class SteemService
 {
-  public function __invoke(Application $app)
+  public function __invoke(SilexApplication $app)
   {
     return new SteemClient($app["steemd.host"]);
   }
