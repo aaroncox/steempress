@@ -66,7 +66,7 @@ class Application extends SilexApplication
                 'cache' => $app['var_dir'].'/cache/twig',
                 'strict_variables' => true,
             ),
-            'twig.path' => array($this->rootDir.'/resources/templates'),
+            'twig.path' => array($this->rootDir.'/resources/templates/'.$app['theme']),
         ));
         $app['twig'] = $app->share($app->extend('twig', function ($twig, $app) {
             $twig->addFunction(new \Twig_SimpleFunction('asset', function ($asset) use ($app) {
