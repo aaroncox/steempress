@@ -76,4 +76,17 @@ class SteemClient
     // Return our posts
     return $posts;
   }
+
+  public function getApi($name)
+  {
+    return $this->client->call(1, 'get_api_by_name', [$name]);
+  }
+
+  public function getFollowing($username, $limit = 100, $skip = -1)
+  {
+    // Load the appropriate API
+    $api = $this->getApi('follow_api');
+    // Get our followers
+    return $this->client->call($api, 'get_following', [$username, $skip, $limit]);;
+  }
 }
