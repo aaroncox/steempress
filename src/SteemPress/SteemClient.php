@@ -58,12 +58,14 @@ class SteemClient
     return $return;
   }
 
-  public function getPosts($username, $limit = 5, $skip = 0)
+  public function getPostsFromAccount($account, $limit, $skip)
   {
     $client = $this->client;
-    $response = $client->get_state('@' . $username);
-    // Add our extra data for displaying posts
-    $posts = $this->amendPosts($response['content']);
+    $response = $client->get_state('@' . $account);
+    return $this->amendPosts($response['content']);
+  }
+
+  public function sortPosts($posts) {
     // Sort the posts by the new timestamp
     uasort($posts, function($a, $b) {
       if ($a['ts'] == $b['ts']) {
@@ -71,6 +73,21 @@ class SteemClient
       }
       return ($a['ts'] < $b['ts']) ? 1 : -1;
     });
+    return $posts;
+  }
+
+  public function getPosts($accounts, $limit = 5, $skip = 0)
+  {
+    if(is_array($accounts)) {
+      $posts = array();
+      foreach($accounts as $account) {
+        $posts = array_merge($posts, $this->getPosts($account));
+      }
+    } else {
+      $posts = $this->getPostsFromAccount($accounts, $limit, $skip);
+    }
+    // Sort these posts by timestamp
+    $posts = $this->sortPosts($posts);
     // Slice to get our desired amount
     $posts = array_slice($posts, $skip, $limit);
     // Return our posts
