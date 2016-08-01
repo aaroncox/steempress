@@ -22,6 +22,7 @@ class SteemClient
   public function previewFromPost($html, $limit = 2) {
     $elements = array();
     $dom = new \DOMDocument;
+    libxml_use_internal_errors(true);
     $dom->loadHTML($html);
     foreach ($dom->getElementsByTagName('body')->item(0)->childNodes as $node) {
       if($node->nodeType === XML_ELEMENT_NODE && sizeof($elements) <= $limit - 1) {
