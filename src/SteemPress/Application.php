@@ -71,10 +71,10 @@ class Application extends SilexApplication
         $app['twig'] = $app->share($app->extend('twig', function ($twig, $app) {
             $twig->addFunction(new \Twig_SimpleFunction('asset', function ($asset) use ($app) {
                 $base = $app['request_stack']->getCurrentRequest()->getBasePath();
-
                 return sprintf($base.'/'.$asset, ltrim($asset, '/'));
             }));
-
+            $twig->addGlobal('steem', $app['steem']);
+            $twig->addGlobal('blog', $app['blog']);
             return $twig;
         }));
 

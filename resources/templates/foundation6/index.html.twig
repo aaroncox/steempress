@@ -1,10 +1,20 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+
   <div class="row">
+
     <div class="large-9 columns" role="content">
-      <h1>{{ 'Homepage'|trans }} Placeholder</h1>
-      <p>Add <strong>/@username</strong> to the URL to view the blog of a user. For example, <a href='/@jesta'>/@jesta</a> displays jesta's blog.</p>
+      {% for post in posts %}
+        {% include 'partials/post.html.twig' with { post: post, preview: true } %}
+        {% if not loop.last %}<hr>{% endif %}
+      {% endfor %}
     </div>
+
+    <aside class="large-3 columns">
+      {% include 'partials/sidebar.html.twig' %}
+    </aside>
+
   </div>
+
 {% endblock %}
