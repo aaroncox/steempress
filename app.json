@@ -1,0 +1,6 @@
+{
+  "name": "Steempress",
+  "description": "A blogging framework that runs on the steem blockchain",
+  "repository": "https://github.com/aaroncox/steempress",
+  "addons": []
+}
