@@ -13,3 +13,7 @@ The goal of SteemPress is to provide a standalone blog engine based on the [stee
 - Voting
 - Authoring Tools
 - Fullpage caching
+
+### Try it Out on Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
