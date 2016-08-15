@@ -1,7 +1,7 @@
 {
   "name": "Steempress",
   "description": "A blogging framework that runs on the steem blockchain",
-  "repository": "https://github.com/bmann/steempress",
+  "repository": "https://github.com/aaroncox/steempress",
   "keywords": ["php","nginx","blockchain","steem","blogging"],
   "addons": []
 }
