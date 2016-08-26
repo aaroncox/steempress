@@ -69,6 +69,7 @@ class SteemClient
       'image' => (isset($meta['image']))
         ? array_shift($meta['image'])
         : $this->getFirstImage($html),
+      'tags' => $meta['tags'],
       'metadata' => json_decode($post['json_metadata'], true),
       'ts' => strtotime($post['created'])
     ));
