@@ -1,0 +1,463 @@
+.steem-powered-svg {
+  max-width: 100px;
+  margin: 0em auto;
+  -webkit-animation: scale-up 1s ease-in-out both;
+          animation: scale-up 1s ease-in-out both; }
+
+#circle1, #circle2, #circle3 {
+  opacity: 0; }
+
+#circle1 {
+  -webkit-animation: fade-in-1 1s ease-in-out both;
+          animation: fade-in-1 1s ease-in-out both; }
+
+#circle2 {
+  -webkit-animation: fade-in-2 1s ease-in-out both;
+          animation: fade-in-2 1s ease-in-out both; }
+
+#circle3 {
+  -webkit-animation: fade-in-3 1s ease-in-out both;
+          animation: fade-in-3 1s ease-in-out both; }
+
+@-webkit-keyframes fade-in-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, 4px);
+            transform: translate(0px, 4px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 3px);
+            transform: translate(0px, 3px); } }
+
+@keyframes fade-in-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, 4px);
+            transform: translate(0px, 4px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 3px);
+            transform: translate(0px, 3px); } }
+
+@-webkit-keyframes fade-in-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(8px, 1px);
+            transform: translate(8px, 1px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(8px, 0px);
+            transform: translate(8px, 0px); } }
+
+@keyframes fade-in-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(8px, 1px);
+            transform: translate(8px, 1px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(8px, 0px);
+            transform: translate(8px, 0px); } }
+
+@-webkit-keyframes fade-in-3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(18px, 4px);
+            transform: translate(18px, 4px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(18px, 3px);
+            transform: translate(18px, 3px); } }
+
+@keyframes fade-in-3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(18px, 4px);
+            transform: translate(18px, 4px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(18px, 3px);
+            transform: translate(18px, 3px); } }
+
+@-webkit-keyframes scale-up {
+  0% {
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes scale-up {
+  0% {
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+.footer {
+  text-align: center;
+  color: #1A5099; }
+  .footer p, .footer a {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  .footer__link {
+    color: #4BA2F2;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .footer__link:hover, .footer__link:focus {
+      color: #FF0064; }
+
+.footer {
+  text-align: center;
+  color: #fff;
+  background-color: #041a37;
+  padding: 3em 0; }
+  .footer p, .footer a {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin-bottom: 0;
+    font-size: 15px; }
+  .footer__link {
+    color: #83c1fa;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .footer__link:hover, .footer__link:focus {
+      color: #FF0064; }
+
+.main-content {
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0px 23px 15px 15px rgba(0, 0, 0, 0.15); }
+
+.no-touchevents .footer {
+  padding: 3em 0 1em; }
+
+.no-touchevents .main-content {
+  margin-bottom: 250px; }
+
+.no-touchevents .footer {
+  width: 100%;
+  height: 250px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: -100; }
+
+.header {
+  padding: 4em 0 2.5em;
+  background-color: #fff; }
+  .header img {
+    margin-bottom: 2em; }
+  .header a h1 {
+    color: #121212;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .header a h1:hover {
+      color: #FF0064; }
+  .header a:hover h1 {
+    color: #FF0064; }
+  .header__links {
+    margin: 2em auto 1em; }
+  .header__link {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding: 1em;
+    font-size: 16px;
+    color: #909AA1; }
+    .header__link--selected {
+      color: #121212; }
+  .header__profile-pic {
+    width: 100px;
+    height: auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .header__profile-pic:hover, .header__profile-pic:focus {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100); } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100); } }
+
+body {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-animation: fade-in 1s ease-in-out both;
+          animation: fade-in 1s ease-in-out both;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  background-color: #fff; }
+
+h1, h2, h3, h4, h5, h6, p, .post-summary-footer, ol, ul, li, blockquote, pre, a {
+  width: 92%;
+  max-width: 560px;
+  margin: 0 auto; }
+
+h1 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 32px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 32px; }
+
+h3 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px; }
+
+p {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 26px; }
+
+a {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  color: #909AA1;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  a:hover, a:focus {
+    color: #FF0064; }
+
+li {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 10px; }
+
+blockquote {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 22px;
+  font-style: italic;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 32px auto;
+  text-align: left; }
+
+pre {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+  background: #333;
+  white-space: pre;
+  word-wrap: break-word;
+  overflow: auto;
+  margin: 2em auto;
+  padding: 1em;
+  border-radius: 5px; }
+
+code, kbd {
+  font-family: Consolas,Liberation Mono,Courier,monospace;
+  color: #fff;
+  background-color: transparent;
+  padding: 1em; }
+
+code {
+  border: none;
+  padding: .125rem .3125rem .0625rem; }
+
+h5.text-center {
+  text-align: center; }
+
+.metadata {
+  display: inline-block;
+  padding: 0 2px;
+  font-size: 15px;
+  color: #121212;
+  font-weight: bold; }
+  .metadata__tags {
+    font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 600;
+    font-stretch: normal; }
+
+/******  Homepage *******/
+article {
+  margin-bottom: 6em; }
+
+h5, h6 {
+  color: #909AA1;
+  font-size: 16px; }
+
+h6 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  margin-bottom: 0px;
+  font-size: 15px; }
+
+h5 a {
+  color: #909AA1;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 15px; }
+
+h5 {
+  margin-bottom: 16px; }
+
+h2 {
+  line-height: 38px;
+  margin-bottom: 16px; }
+
+h2 a {
+  color: #121212;
+  font-size: 32px; }
+
+.continue-reading {
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+.btn-upvote {
+  height: 1.12rem;
+  width: 1.12rem;
+  position: relative;
+  top: 3px; }
+
+.blogpost .post-summary-footer {
+  margin-top: 4em; }
+
+.post-summary-footer {
+  margin-top: 2em;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #909AA1;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 1.5em;
+  text-align: center; }
+  .post-summary-footer__btn-upvote {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    stroke: #909AA1;
+    fill: none; }
+    .post-summary-footer__btn-upvote:hover, .post-summary-footer__btn-upvote:focus {
+      stroke: #FF0064;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .post-summary-footer__btn-upvote:hover path, .post-summary-footer__btn-upvote:focus path {
+        fill: #FF0064; }
+    .post-summary-footer__btn-upvote path {
+      fill: #909AA1; }
+  .post-summary-footer__btn-votes {
+    fill: #909AA1; }
+  .post-summary-footer__btn-comments {
+    fill: #909AA1; }
+
+p {
+  margin-bottom: 1em; }
+
+article p, article pre {
+  text-align: left; }
+
+aside {
+  margin-bottom: 4em; }
+  aside li {
+    list-style: none; }
+  aside ul {
+    margin-bottom: 2em; }
+  aside h5 {
+    font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 600;
+    font-stretch: normal;
+    margin-bottom: 0.5em; }
+
+.article-content {
+  text-align: left; }
+  .article-content h5.text-center {
+    text-align: center; }
+  .article-content img {
+    margin-bottom: 20px; }
+  .article-content p {
+    margin: 1em auto; }
+  .article-content p {
+    margin-bottom: 20px; }
+  .article-content p + img, .article-content ol + img, .article-content ul + img {
+    margin-top: 1em; }
+  .article-content img + p, .article-content img + h1, .article-content img + h2, .article-content img + h3, .article-content img + h4, .article-content img + h5, .article-content img + h6 {
+    margin-top: 24px; }
+  .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+    margin-top: 42px;
+    margin-bottom: 8px; }
+  .article-content h1, .article-content h2, .article-content h3 {
+    margin-bottom: 16px; }
+  .article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: normal; }
+  .article-content h1 + p, .article-content h2 + p, .article-content h3 + p, .article-content h4 + p, .article-content h5 + p, .article-content h6 + p {
+    margin-top: 0; }
+  .article-content h4, .article-content h5, .article-content h6 {
+    font-weight: bold;
+    color: #121212; }
+  .article-content h1 {
+    font-size: 42px;
+    line-height: 46px; }
+  .article-content h2 {
+    font-size: 36px;
+    line-height: 42px; }
+  .article-content h3 {
+    font-size: 28px;
+    line-height: 32px; }
+  .article-content h4 {
+    font-size: 24px;
+    line-height: 28px; }
+  .article-content h5 {
+    font-size: 20px;
+    line-height: 24px; }
+  .article-content h6 {
+    font-size: 18px;
+    line-height: 24px; }
+  .article-content ul, .article-content ol {
+    margin-bottom: 24px; }
+  .article-content li {
+    text-align: left; }
+  .article-content a {
+    text-align: left;
+    color: #4F99E8;
+    width: 92%;
+    max-width: 560px;
+    margin: 1em auto;
+    display: block;
+    font-size: 18px; }
+    .article-content a:hover, .article-content a:focus {
+      color: #1A5099; }
+  .article-content p a, .article-content h1 a, .article-content h2 a, .article-content h3 a, .article-content h4 a, .article-content h5 a, .article-content h6 a, .article-content li a, .article-content span a {
+    display: inline; }
+  .article-content .customizable-links {
+    list-style: none;
+    padding-left: 0; }
+    .article-content .customizable-links li {
+      margin-left: 0; }
+
+h1.blog-post-title, h2.blog-post-title {
+  text-align: center;
+  font-size: 42px;
+  line-height: 44px;
+  margin: 32px auto 16px;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-weight: normal;
+  color: #121212;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out; }
+
+a:hover h1.blog-post-title, a:focus h1.blog-post-title, a:hover h2.blog-post-title, a:focus h2.blog-post-title {
+  color: #FF0064; }
+/*# sourceMappingURL=main.css.map */

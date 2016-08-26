@@ -7,12 +7,12 @@ $app['locale'] = 'en';
 $app['steemd'] = 'https://steem.steemstats.com';
 
 // theme configuration
-$app['theme'] = 'foundation6';
+$app['theme'] = 'foundation6-default';
 
 // what type of posts should we load?
 $app['steem'] = [
   // an array of users allowed to appear
-  'accounts' => ['jesta', 'dantheman', 'ned'],
+  'accounts' => ['jesta'],
   // an array of tags to ensure exist
   'tags' => [
     'steemstats',

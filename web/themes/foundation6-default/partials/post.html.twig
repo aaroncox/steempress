@@ -1,0 +1,42 @@
+<article>
+  <a href="/{{ post.metadata.tags[0] }}/@{{ post.author }}/{{ post.permlink }}">
+    <img src="{{ post.image }}" alt="">
+    <h2 class="blog-post-title">
+      {{ post.title }}
+    </h2>
+  </a>
+  <h5 class="text-center">
+    <div class="metadata">
+      {{ "%datetime%" | trans({'%datetime%' : post.ts | date("d M Y")})}}
+    </div>
+    <div class="metadata metadata__tags">
+      {% for tag in post['tags'] %}
+        {% if tag %}
+        <a href="/tagged/{{ tag }}">
+          #{{ tag }}
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </h5>
+  <div class="article-content">
+    {% if preview is defined %}
+    {{ post.html_preview | raw }}
+    {% else %}
+    {{ post.html | raw }}
+    {% endif %}
+  </div>
+  {% if preview is defined %}
+  <a href="/{{ post.metadata.tags[0] }}/@{{ post.author }}/{{ post.permlink }}"  class="continue-reading">
+    {{ 'Read more...' | trans }}
+  </a>
+  {% endif %}
+  <div class="post-summary-footer">
+    <a><svg class="post-summary-footer__btn-upvote btn-upvote" enable-background="new 0 0 33 33" version="1.1" viewBox="0 0 33 33" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Chevron_Up_Circle"><circle cx="16" cy="16" r="15"></circle><path d="M16.699,11.293c-0.384-0.38-1.044-0.381-1.429,0l-6.999,6.899c-0.394,0.391-0.394,1.024,0,1.414 c0.395,0.391,1.034,0.391,1.429,0l6.285-6.195l6.285,6.196c0.394,0.391,1.034,0.391,1.429,0c0.394-0.391,0.394-1.024,0-1.414 L16.699,11.293z"></path></g></svg></a>
+    ${{ post.total_payout_value }}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="article.html"><svg class="post-summary-footer__btn-votes btn-upvote" id="Capa_1" version="1.1" viewBox="0 0 100 88" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M100,88c0,0-0.197-18.934-1.354-20.896c-1.721-2.923-5.729-4.932-13.17-8.041c-7.416-3.101-9.787-5.716-9.787-11.316 c0-3.364,2.264-2.264,3.26-8.419c0.412-2.555,2.412-0.043,2.795-5.872c0-2.324-1.092-2.903-1.092-2.903s0.555-3.437,0.771-6.084 c0.27-3.298-1.662-11.815-11.955-11.815c-10.295,0-12.225,8.518-11.955,11.815c0.217,2.647,0.77,6.084,0.77,6.084 s-1.09,0.579-1.09,2.903c0.383,5.829,2.381,3.317,2.795,5.872c0.994,6.155,3.26,5.056,3.26,8.419c0,3.807-1.102,6.235-4.137,8.375 c16.203,8.111,18.375,9.764,18.375,17.015V88H100z M51.117,61.877c-9.891-4.134-13.051-7.621-13.051-15.086 c0-4.483,3.02-3.019,4.346-11.228c0.549-3.404,3.217-0.056,3.727-7.829c0-3.098-1.455-3.868-1.455-3.868s0.74-4.583,1.029-8.112 C46.072,11.357,43.498,0,29.771,0C16.047,0,13.471,11.357,13.832,15.754c0.289,3.529,1.027,8.112,1.027,8.112 s-1.455,0.77-1.455,3.868c0.512,7.773,3.178,4.425,3.729,7.829c1.326,8.208,4.346,6.744,4.346,11.228 c0,7.465-3.162,10.952-13.051,15.086C5.414,63.137,0,65.088,0,69.783V88h69.469c0,0,0-10.776,0-13.659 C69.469,70.059,61.037,66.025,51.117,61.877z"></path></g></svg></a>
+    {{ post.active_votes | length }} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="article.html"><svg class="post-summary-footer__btn-comments btn-upvote" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><g><path d="M294.1,365.5c-2.6-1.8-7.2-4.5-17.5-4.5H160.5c-34.7,0-64.5-26.1-64.5-59.2V201h-1.8C67.9,201,48,221.5,48,246.5v128.9 c0,25,21.4,40.6,47.7,40.6H112v48l53.1-45c1.9-1.4,5.3-3,13.2-3h89.8c23,0,47.4-11.4,51.9-32L294.1,365.5z"></path><path d="M401,48H183.7C149,48,128,74.8,128,107.8v69.7V276c0,33.1,28,60,62.7,60h101.1c10.4,0,15,2.3,17.5,4.2L384,400v-64h17 c34.8,0,63-26.9,63-59.9V107.8C464,74.8,435.8,48,401,48z"></path></g></svg>
+      </a>{{ post.children }}
+  </div>
+</article>

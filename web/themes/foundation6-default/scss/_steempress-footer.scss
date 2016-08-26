@@ -1,0 +1,61 @@
+.footer {
+	text-align: center;
+	color: $steemit-blue-dark;
+	p, a {
+		font-family: $helvetica;	
+	}
+	&__link {
+		color: $steemit-blue-light;
+		transition: all 0.2s ease-in-out;
+		&:hover, &:focus {
+			color: $pink;
+		}
+	}	
+}
+
+
+
+.footer {
+	text-align: center;
+	color: #fff;
+	background-color: #041a37;
+	padding: 3em 0;
+	p, a {
+		font-family: $helvetica;
+		margin-bottom: 0;
+		font-size: 15px;	
+	}
+	&__link {
+		color: #83c1fa;
+		transition: all 0.2s ease-in-out;
+		&:hover, &:focus {
+			color: $pink;
+		}
+	}	
+}
+
+.main-content {
+	z-index: 1;
+	background-color: #fff;
+	box-shadow: 0px 23px 15px 15px rgba(0, 0, 0, 0.15);
+}
+
+.no-touchevents .footer {
+	padding: 3em 0 1em;
+}
+
+.no-touchevents .main-content {
+	margin-bottom: 250px;
+}
+
+
+.no-touchevents .footer{
+  width: 100%;
+  height: 250px;
+  position: fixed; 
+  left: 0;
+  bottom: 0;
+  z-index: -100;
+}
+
+

@@ -2,19 +2,18 @@
 
 {% block content %}
 
-  <div class="row">
-
-    <div class="large-9 columns" role="content">
+<section class="main-content">
+  <div class="row text-center">
+    <div class="large-12 columns" role="content">
       {% for post in posts %}
         {% include 'partials/post.html.twig' with { post: post, preview: true } %}
         {% if not loop.last %}<hr>{% endif %}
       {% endfor %}
     </div>
-
-    <aside class="large-3 columns">
-      {% include 'partials/sidebar.html.twig' %}
-    </aside>
-
   </div>
+</section>
+
+
+
 
 {% endblock %}

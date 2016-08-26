@@ -1,0 +1,43 @@
+.header {
+	padding: 4em 0 2.5em;
+	background-color: #fff;
+
+	img {
+		margin-bottom: 2em;
+	}
+	a h1 {
+		color: $black;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: $pink;
+		}
+	}
+	a:hover {
+		h1 {
+			color: $pink;
+		}
+	}
+	&__links {
+		margin: 2em auto 1em;
+	}
+	&__link {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-family: $helvetica;
+		padding: 1em; 
+		font-size: 16px;
+		color: $gray-light;
+		&--selected {
+			color: $black;
+		}
+	}
+	&__profile-pic {
+		width: 100px;
+		height: auto;
+		transition: all 0.3s ease-in-out;
+		&:hover, &:focus {
+			transform: scale(1.05);
+		}
+	}
+}
+
