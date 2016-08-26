@@ -2,8 +2,8 @@
 
 namespace SteemPress;
 
-use cebe\markdown;
 use JsonRPC\Client;
+use JsonRPC\HttpClient;
 use Symfony\Component\DomCrawler\Crawler;
 
 class SteemClient
@@ -15,8 +15,9 @@ class SteemClient
   public function __construct($host)
   {
     $this->host = $host;
-    $this->client = new Client($host);
-    $this->parser = new \cebe\markdown\MarkdownExtra();
+    $httpClient = new HttpClient($host);
+    $httpClient->withoutSslVerification();
+    $this->client = new Client($host, false, $httpClient);
   }
 
   public function previewFromPost($html, $limit = 2) {
@@ -39,8 +40,20 @@ class SteemClient
     return $content;
   }
 
+  protected function parseContent($string) {
+    // Let's turn image URLs into <img> tags
+    $regex = "~<img[^>]*>(*SKIP)(*FAIL)|\\[[^\\]]*\\](*SKIP)(*FAIL)|\\([^\\)]*\\)(*SKIP)(*FAIL)|https?://[^/\\s]+/\\S+\\.(?:jpg|png|gif)~i";
+    $string = preg_replace($regex, '<img src="${0}">', $string);
+    // Then let's parse the markdown
+    $string = \Michelf\Markdown::defaultTransform($string);
+    // Now clean it
+    $purifier = new \HTMLPurifier();
+    $string = $purifier->purify($string);
+    return $string;
+  }
+
   protected function amendPost($post) {
-    $html = $this->parser->parse($post['body']);
+    $html = $this->parseContent($post['body']);
     return array_merge($post, array(
       'html' => $html,
       'html_preview' => $this->previewFromPost($html),
