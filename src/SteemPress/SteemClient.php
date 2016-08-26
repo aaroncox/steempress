@@ -40,6 +40,14 @@ class SteemClient
     return $content;
   }
 
+  protected function getFirstImage($string) {
+    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $string, $matches);
+    if($matches[1] && $matches[1][0]) {
+      return $matches[1][0];
+    }
+    return null;
+  }
+
   protected function parseContent($string) {
     // Let's turn image URLs into <img> tags
     $regex = "~<img[^>]*>(*SKIP)(*FAIL)|\\[[^\\]]*\\](*SKIP)(*FAIL)|\\([^\\)]*\\)(*SKIP)(*FAIL)|https?://[^/\\s]+/\\S+\\.(?:jpg|png|gif)~i";
@@ -54,9 +62,13 @@ class SteemClient
 
   protected function amendPost($post) {
     $html = $this->parseContent($post['body']);
+    $meta = json_decode($post['json_metadata'], true);
     return array_merge($post, array(
       'html' => $html,
       'html_preview' => $this->previewFromPost($html),
+      'image' => (isset($meta['image']))
+        ? array_shift($meta['image'])
+        : $this->getFirstImage($html),
       'metadata' => json_decode($post['json_metadata'], true),
       'ts' => strtotime($post['created'])
     ));
