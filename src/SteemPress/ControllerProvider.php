@@ -29,6 +29,10 @@ class ControllerProvider implements ControllerProviderInterface
       ->bind('blog');
 
     $controllers
+      ->get('/@{username}/{category}', [$this, 'category'])
+      ->bind('category');
+
+    $controllers
       ->get('/{tag}/@{username}/{permlink}', [$this, 'post'])
       ->bind('post');
 
@@ -47,6 +51,14 @@ class ControllerProvider implements ControllerProviderInterface
     return $app['twig']->render('blog.html.twig', array(
       'username' => $username,
       'posts' => $app['steemd']->getPosts($username)
+    ));
+  }
+
+  public function category(App $app, $username, $category)
+  {
+    return $app['twig']->render('blog.html.twig', array(
+      'username' => $username,
+      'posts' => $app['steemd']->getPosts($username, [$category])
     ));
   }
 
