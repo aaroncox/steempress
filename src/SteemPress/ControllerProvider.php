@@ -38,7 +38,7 @@ class ControllerProvider implements ControllerProviderInterface
   public function homepage(App $app)
   {
     return $app['twig']->render('index.html.twig', array(
-      'posts' => $app['steemd']->getPosts($app['steem']['accounts'])
+      'posts' => $app['steemd']->getPosts($app['steem']['accounts'], $app['steem']['tags'])
     ));
   }
 
