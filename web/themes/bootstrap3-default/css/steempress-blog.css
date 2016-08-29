@@ -40,6 +40,9 @@ blockquote {
   color: #777777;
   font-style: italic;
 }
+img {
+  max-width: 100%;
+}
 hr.small {
   max-width: 100px;
   margin: 15px auto;
@@ -560,7 +563,7 @@ body {
     min-width: 110px;
     margin-right: 20px;
   }
-  
+
   .upvote--Icon {
     width: 17px;
     height: 30px;
@@ -572,7 +575,7 @@ body {
 
     .upvote--Icon:hover {
       background-position: 0 10px;
-     
+
     }
       .upvote--Icon span {
         margin-left: 20px;
@@ -580,7 +583,7 @@ body {
         color: #5C9DD5;
       }
 
-  
+
   .comment--Icon {
     width: 17px;
     height: 30px;
@@ -591,8 +594,8 @@ body {
   }
 
     .comment--Icon:hover {
-    
-     
+
+
     }
       .comment--Icon span {
         margin-left: 20px;
@@ -621,7 +624,7 @@ body {
   }
 }
 
-    
+
 
 .post--Share {
   max-width: 350px;
@@ -667,7 +670,7 @@ body {
     bottom: -5px;
     font-weight: 400 !important;
 }
-  
+
   .continue--ReadingButton:hover,
   .continue--ReadingButton:focus {
     color: #5C9DD5 !important;
@@ -789,7 +792,7 @@ body {
   -ms-transform: translate(-100px, 0px);
   transform: translate3d(-100px, 0px, 0px);
   }
-  
+
 }
 
 
