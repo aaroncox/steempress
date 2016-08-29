@@ -1,0 +1,8 @@
+version: '2'
+services:
+  development:
+    build: ./resources/config/docker
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "80:80"
