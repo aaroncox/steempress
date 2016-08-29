@@ -1,5 +1,7 @@
-<div class="col-sm-12 col-md-12 col-lg-4 post--Img">
-    <img class="img-responsive" src="{{ post.image }}">
+<div class="col-sm-12 col-md-12 col-lg-4 post--Img animation-element slide-left">
+    <div class="post--Cover">
+        <img src="{{ post.image }}">
+    </div>
 </div>
 
 <div class="col-sm-12 col-md-12 col-lg-8 post--Header">
@@ -8,40 +10,33 @@
             {{ post.title }}
         </h2>
     </a>
-    <div class="post--Actions">
-        <div class="amount--Earned">
-            $ {{ post.total_payout_value }}
+
+    <div class="post--ActionsContainer">
+        <div class="post--Actions">
+            <div class="amount--Earned">
+                $ {{ post.total_payout_value }}
+            </div>
+            
+            <div class="post--Numbers">
+                <div class="upvote--Icon">
+                    <span> {{ post.active_votes | length }}</span>
+                </div>
+
+                <div class="comment--Icon">
+                    <span> {{ post.children }}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="post--Meta">
+            {{ "%datetime%" | trans({'%datetime%' : post.ts | date("d M Y")})}} by <a href="#">{{ post.author }}</a> in <a href="#">{{ post.category }}</a>
         </div>
 
-        <div class="post--Numbers">
-
-            <div class="upvote--Icon">
-                <span> {{ post.active_votes | length }}</span>
-            </div>
-
-            <div class="comment--Icon">
-                <span> {{ post.children }}</span>
-            </div>
-
-        </div>
+        <span class="line"></span>
     </div>
-
-    <div class="post--Meta">
-      {{ "%datetime%" | trans({'%datetime%' : post.ts | date("d M Y")})}}
-      by
-      <a href="#">{{ post.author }}</a>
-      in
-      <a href="#">
-        {{ post.category }}
-      </a>
-    </div>
-
-    <span class="line"></span>
-
-
 </div>
 
-<div class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-4 post-preview post--Exerpt">
+<div class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-4 post-preview post--Excerpt">
     {% if preview is defined %}
       {{ post.html_preview | raw }}
     {% else %}

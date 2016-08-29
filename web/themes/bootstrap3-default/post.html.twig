@@ -12,36 +12,30 @@
                     <h1>{{ post.title }}</h1>
                 </div>
 
+                <div class="post--ActionsContainer">
+                    <div class="post--Actions">
+                        <div class="amount--Earned">
+                            $ {{ post.total_payout_value }}
+                        </div>
+                        
+                        <div class="post--Numbers">
+                            <div class="upvote--Icon">
+                                <span> {{ post.active_votes | length }}</span>
+                            </div>
 
-                <div class="post--Actions">
-                    <div class="amount--Earned clear--Margin">
-                        $ {{ post.total_payout_value }}
+                            <div class="comment--Icon">
+                                <span> {{ post.children }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post--Meta">
+                        {{ "%datetime%" | trans({'%datetime%' : post.ts | date("d M Y")})}} by <a href="#">{{ post.author }}</a> in <a href="#">{{ post.category }}</a>
                     </div>
 
-                    <div class="post--Numbers">
-
-                        <div class="upvote--Icon">
-                            <span> {{ post.active_votes | length }}</span>
-                        </div>
-
-                        <div class="comment--Icon">
-                            <span> {{ post.children }}</span>
-                        </div>
-
-                    </div>
+                    <span class="line"></span>
                 </div>
-
-                <div class="post--Meta">
-                  {{ "%datetime%" | trans({'%datetime%' : post.ts | date("d M Y")})}}
-                  by
-                  <a href="#">{{ post.author }}</a>
-                  in
-                  <a href="#">{{ post.category }}</a>
-                </div>
-
-                <span class="line"></span>
-
-
+                
             </div>
         </div>
     </div>
