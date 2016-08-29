@@ -49,7 +49,7 @@ class Comment extends Base
         $elements[] = $node->ownerDocument->saveXML($node);
       }
     }
-    return implode($elements);
+    return strip_tags(implode($elements),'<p><br>');
   }
 
   protected function getFirstImage($string) {
