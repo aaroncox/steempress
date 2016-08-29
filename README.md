@@ -7,21 +7,15 @@ The goal of SteemPress is to provide a standalone blog engine based on the [stee
 - Twig Templating
 - Localization Support
 
-### Running steempress via Docker
+### Running steempress development mode via Docker
 
-From the steempress folder, there are two primary commands:
-
-**Initialize the container:**
+From the steempress folder, run
 
 ```
-docker build --tag steempress .
+docker-compose build && docker-compose up
 ```
 
-**Start the container:**
-
-```
-docker run -v $(pwd):/src/steempress -p 80:80 steempress
-```
+CTRL+C breaks the process.
 
 ### Future Feature Ideas
 
