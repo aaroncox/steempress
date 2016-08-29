@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/themes/bootstrap3-default/img/steempress/hero-bg1.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Welcome to my Steem Press Blog</h1>
+                    <hr class="small">
+                    <span class="subheading">This Blog is Powered By Steemit Blockchain</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    {% for post in posts %}
+      {% include 'partials/post.html.twig' with { post: post, preview: true } %}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+            <!-- Pager -->
+            <div class="col-lg-12">
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

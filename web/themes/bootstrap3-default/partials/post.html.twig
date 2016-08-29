@@ -1,0 +1,56 @@
+<div class="col-sm-12 col-md-12 col-lg-4 post--Img">
+    <img class="img-responsive" src="{{ post.image }}">
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-8 post--Header">
+    <a href="/{{ post.getCategory() }}/@{{ post.author }}/{{ post.permlink }}">
+        <h2 class="post--Title">
+            {{ post.title }}
+        </h2>
+    </a>
+    <div class="post--Actions">
+        <div class="amount--Earned">
+            $ {{ post.total_payout_value }}
+        </div>
+
+        <div class="post--Numbers">
+
+            <div class="upvote--Icon">
+                <span> {{ post.active_votes | length }}</span>
+            </div>
+
+            <div class="comment--Icon">
+                <span> {{ post.children }}</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="post--Meta">
+      {{ "%datetime%" | trans({'%datetime%' : post.ts | date("d M Y")})}}
+      by
+      <a href="#">{{ post.author }}</a>
+      in
+      <a href="#">
+        {{ post.category }}
+      </a>
+    </div>
+
+    <span class="line"></span>
+
+
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-4 post-preview post--Exerpt">
+    {% if preview is defined %}
+      {{ post.html_preview | raw }}
+    {% else %}
+    {{ post.html | raw }}
+    {% endif %}
+
+    <a href="/{{ post.getCategory() }}/@{{ post.author }}/{{ post.permlink }}" class="continue--ReadingButton">
+      {{ 'Read more...' | trans }}
+    </a>
+    <span class="line"></span>
+
+</div>

@@ -1,0 +1,91 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<!-- Page Header -->
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{ post.title }}</h1>
+                </div>
+
+
+                <div class="post--Actions">
+                    <div class="amount--Earned clear--Margin">
+                        $ {{ post.total_payout_value }}
+                    </div>
+
+                    <div class="post--Numbers">
+
+                        <div class="upvote--Icon">
+                            <span> {{ post.active_votes | length }}</span>
+                        </div>
+
+                        <div class="comment--Icon">
+                            <span> {{ post.children }}</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="post--Meta">
+                  {{ "%datetime%" | trans({'%datetime%' : post.ts | date("d M Y")})}}
+                  by
+                  <a href="#">{{ post.author }}</a>
+                  in
+                  <a href="#">{{ post.category }}</a>
+                </div>
+
+                <span class="line"></span>
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                {{ post.html | raw }}
+
+                <span class="line"></span>
+
+                <div class="post--Actions">
+                    <div class="amount--Earned clear--Margin">
+                        $ {{ post.total_payout_value }}
+                    </div>
+
+                    <div class="post--Numbers">
+
+                        <div class="upvote--Icon">
+                            <span> {{ post.active_votes | length }}</span>
+                        </div>
+
+                        <div class="comment--Icon">
+                            <span> {{ post.children }}</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="post--Share">
+                    <a href="#"><img src="/themes/bootstrap3-default/img/steempress/share-sprite.png"></a>
+                </div>
+
+                <br/>
+                <br/>
+                <br/>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+{% endblock %}
