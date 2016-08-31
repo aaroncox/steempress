@@ -451,12 +451,15 @@ h1.blog-post-title, h2.blog-post-title {
   text-align: center;
   font-size: 42px;
   line-height: 44px;
-  margin: 32px auto 16px;
+  margin: 48px auto 48px;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-weight: normal;
   color: #121212;
   -webkit-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out; }
+  transition: 0.3s all ease-in-out; 
+  max-width: 860px;
+
+}
 
 a:hover h1.blog-post-title, a:focus h1.blog-post-title, a:hover h2.blog-post-title, a:focus h2.blog-post-title {
   color: #FF0064; }
